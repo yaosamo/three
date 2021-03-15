@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> <head> 
+    <meta charset="utf-8"> 
+    <title>My first three.js app</title> 
+    <style> body { margin: 0; background: #ccc;} </style> </head> 
+    <body>
+        <script src="three.js"></script> 
+
+        <script> 
+
+		
+        
+   
+			//Scene camera and renderer
+			import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			//Load model
+			const loader = new GLTFLoader(); 
+			
+			loader.load( 'model.gltf', function ( gltf ) {
+			scene.add( gltf.scene );
+
+			camera.position.z = 30;
+			renderer.render( scene, camera );
+
+			}, undefined, function ( error ) {
+			console.error( error );
+			} );
+
+
+
+			// const scene = new THREE.Scene();
+			// const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			// const renderer = new THREE.WebGLRenderer();
+			// renderer.setSize( window.innerWidth, window.innerHeight );
+			// document.body.appendChild( renderer.domElement );
+
+			// const geometry = new THREE.BoxGeometry();
+			// const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			// const cube = new THREE.Mesh( geometry, material );
+			// scene.add( cube );
+
+			// camera.position.z = 52;
+			// renderer.render( scene, camera );
+		
+
+        
+
+        </script> 
+        
+    </body> 
+    
+</html>
