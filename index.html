@@ -19,12 +19,13 @@
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-			//Losd model
+			//Load model
 			const loader = new GLTFLoader(); 
 			
-			loader.load( 'model.glb', function ( gltf ) {
+			loader.load( 'model.gltf', function ( gltf ) {
 			scene.add( gltf.scene );
-			camera.position.z = 5;
+
+			camera.position.z = 30;
 			renderer.render( scene, camera );
 
 			}, undefined, function ( error ) {
@@ -45,7 +46,7 @@
 			// const cube = new THREE.Mesh( geometry, material );
 			// scene.add( cube );
 
-			// camera.position.z = 5;
+			// camera.position.z = 52;
 			// renderer.render( scene, camera );
 		
 
